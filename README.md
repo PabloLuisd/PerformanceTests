@@ -53,6 +53,8 @@ http://localhost:8089
 
 ## Testes Headless
 
+Para executar os testes, basta utilizar os 3 comandos abaixo.
+
 ### 10 usuários
 
 ```bash
@@ -74,7 +76,7 @@ docker exec -it locust locust \
 -u 50 \
 -r 5 \
 --run-time 1m \
---csv=/mnt/locust/results_10
+--csv=/mnt/locust/results_50
 ```
 
 ### 100 usuários
@@ -83,10 +85,10 @@ docker exec -it locust locust \
 docker exec -it locust locust \
 -f /mnt/locust/locustfile.py \
 --headless \
--u 100\
+-u 100 \
 -r 10 \
 --run-time 1m \
---csv=/mnt/locust/results_10
+--csv=/mnt/locust/results_100
 ```
 
 ---
@@ -110,4 +112,10 @@ results_100_stats.csv
 results_100_failures.csv
 results_100_exception.csv
 results_100_stats_history.csv
+```
+
+## Gerando relatório dinâmico
+
+```bash
+docker exec -it locust python relatorio.py
 ```

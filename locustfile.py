@@ -29,7 +29,7 @@ class DummyJsonUser(HttpUser):
         produto = random.randint(1, 30)
 
         with self.client.get(
-            "/products/{produto}",
+            f"/products/{produto}",
             name="Consultar Produto",
             catch_response=True
         ) as response:

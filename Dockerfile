@@ -1,11 +1,15 @@
-FROM python:3.12-slim
+FROM python:3.13-slim
 
-WORKDIR /app
+WORKDIR /mnt/locust
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
-
 COPY . .
 
-CMD ["locust"]
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+CMD ["locust", "-f", "locustfile.py"]
+
+
+
