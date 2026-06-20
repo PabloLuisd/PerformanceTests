@@ -33,6 +33,8 @@ Avaliar o comportamento da API DummyJSON sob diferentes níveis de carga, analis
 - Python
 - Locust
 - Docker
+- Matplotlib
+- Reportlab
 
 
 ## Executando o Projeto
